@@ -22,3 +22,5 @@ une interface swagger est fournite sur `http://localhost:8000/api/v1/docs/` pour
 ## Tests
 
 les tests sont réalisés avec pytest et il couvrent l'intégralité des exigences du test technique
+
+pour éxecuter les test `pytest`
