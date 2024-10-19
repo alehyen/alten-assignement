@@ -1,0 +1,22 @@
+services:
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: gunicorn --chdir /app/admin wsgi  --bind 0.0.0.0:8000
+    ports:
+      - 8000:8000
+    environment:
+      - DATABASE_HOST=postgres
+      - DATABASE_PORT=5432
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:13.0-alpine
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=azerty789
+      - POSTGRES_DB=postgres
+
