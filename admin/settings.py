@@ -30,6 +30,9 @@ INSTALLED_APPS = [
     # rest api
     'rest_framework',
 
+    # swagger
+    'drf_spectacular',
+
     # apps
     'products'
 ]
@@ -64,6 +67,16 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'admin.wsgi.application'
 
+REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Your Project API',
+    'DESCRIPTION': 'Your project description',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
+}
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
